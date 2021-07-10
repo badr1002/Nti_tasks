@@ -1,0 +1,13 @@
+{{>navbar}}
+<section class="container">
+    <div class="row">
+        {{#each data}}
+        <div class="col">
+            <h1><a href="/student/{{this._id}}">{{this.name}}</a></h1>
+        </div>
+        {{/each}}
+    </div>
+</section>
+
+
+{{>footer}}

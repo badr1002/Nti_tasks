@@ -1,0 +1,14 @@
+{{>navbar}}
+
+<section class="container">
+    <div class="row">
+        {{#each data}}
+
+        <div class="col">
+            <h1><a href={{lang}}>{{this.title}}</a></h1>
+            <p class="lorem">{{this.content}}</p>
+        </div>
+        {{/each}}
+    </div>
+</section>
+{{>footer}}

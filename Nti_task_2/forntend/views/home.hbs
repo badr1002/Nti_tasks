@@ -1,0 +1,29 @@
+{{>navbar}}
+
+<section class="container">
+    <div class="row">
+        {{#each data}}
+       
+        <div class="col">
+            <h1><a  href="/singleBlog/{{../lang}}">{{this.title}}</a></h1>
+            <p class="lorem">{{this.content}}</p>
+        </div>
+        <div class="col">
+            <h1><a href="/singleBlog/{{../lang}}">{{this.title}}</a></h1>
+            <p class="lorem">{{this.content}}</p>
+        </div>
+        <div class="col">
+            <h1><a href="/singleBlog/{{../lang}}">{{this.title}}</a></h1>
+            <p class="lorem">{{this.content}}</p>
+        </div>
+        <div class="col">
+            <h1><a href="/singleBlog/{{../lang}}">{{this.title}}</a></h1>
+            <p class="lorem">{{this.content}}</p>
+        </div>
+        
+        {{/each}}
+    </div>
+</section>
+
+
+{{>footer}}
