@@ -1,5 +1,5 @@
-$Task3  
-$It's a CRUD app using Node and MongoDB
+Task3  
+It's a CRUD app using Node and MongoDB
 
 show all students 
 show single student
