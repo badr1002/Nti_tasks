@@ -246,5 +246,43 @@ class Models {
         }
     }
     
+    editCourse = async (req, res) => {
+        const myAllowedUpdates = ['title', 'content']
+        const updates = Object.keys(req.body)
+        const isValid = updates.every(up => myAllowedUpdates.includes(up))
+        if(!isValid) res.status(500).send('not avaliable')
+        try {
+            const student = await studentModel.findById(req.params.sid);
+            let newCourses = student.courses; 
+            newCourses.map(c => {
+                if (c._id == req.params.cid) {
+                    Object.entries(req.body).map(a => {
+                        return c[a[0]] = a[1]
+                    })
+                }
+            });
+            
+           student.update({ courses: newCourses });
+           await student.save();
+            if (!student) {
+                res.status(404).send({
+                    apiStatus: true,
+                    message:"student not found!",
+                    data: {}
+                })
+            }
+            res.status(200).send({
+                apiStatus: true,
+                message: "This course  has deleted successfully",
+                data: newCourses 
+            });
+        }
+        catch (err) {
+            res.status(500).send({
+                apiStatus: false,
+                message: "This student not found!",
+                data: err
+            })
+        }
 }
 module.exports = Models;
