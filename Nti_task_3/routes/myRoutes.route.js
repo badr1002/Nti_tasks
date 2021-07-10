@@ -25,7 +25,8 @@ router.delete('/delete/student/:sid/courses/', model.deleteAllCoursesForStudent)
 router.delete('/delete/student/:sid/course/:cid', model.deleteCourse);
 // edit student
 router.patch('/edit/student/:id', model.editStudent);
-
+// edit course
+router.patch('/student/:sid/edit/course/:cid', model.editCourse);
 
 
 
